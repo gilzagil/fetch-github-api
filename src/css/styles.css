@@ -141,6 +141,7 @@ main {
   display: block;
   border-radius: 7px;
   transition: 0.3s ease-in-out;
+  
 }
 
 .container .profile-data .repositories ul li a:hover{
@@ -152,8 +153,16 @@ main {
   display: none;
 }
 
+.eventos{
+  font-size: 13px;
+  background-color: #dee1e4;
+  text-align: left;
+  padding: 15px 15px;
+}
+
 @media (max-width: 1280px) {
   .container {
+
     flex-direction: column;
     width: 90%;
     border-radius: 20px;
