@@ -45,7 +45,7 @@ function getUserProfile(userName) {
                             <div class="dados"> 
                                 <h1>${userData.name ?? "Usuário não possui nome cadastrado😢"}</h1>
                                 <p>${userData.bio ?? "Usuário não possui bio cadastrada😢"}</p><br>
-                                <p>🧑‍🤝‍🧑 ${userData.followers} followers ${userData.following} followings</p>
+                                <p>🫂 ${userData.followers} followers ${userData.following} followings</p>
                             </div>   
                         </div>`
         document.querySelector(".profile-data").innerHTML = userInfo
@@ -58,9 +58,9 @@ function getUserRepositories(userName) {
     repos(userName).then(reposData => {
         let reposItens = ""
         reposData.forEach(repo => {
-            reposItens += `<li><a href="${repo.html_url}" target=_blank>${repo.name}<br>
-                                  Forks:${repo.forks} Watchers:${repo.watchers}<br> 
-                                  Stars:${repo.stargazers_count} Language:${repo.language}</a></li>`
+            reposItens += `<li><a href="${repo.html_url}" target=_blank>${repo.name}<br><br>
+                                  🍴:${repo.forks} 👀:${repo.watchers}<br> 
+                                  ⭐:${repo.stargazers_count} 💻:${repo.language}</a></li>`
         });
 
         document.querySelector(".profile-data").innerHTML += `<div class="repositories section">
