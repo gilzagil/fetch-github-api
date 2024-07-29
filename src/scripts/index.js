@@ -75,10 +75,13 @@ function getEvents(userName) {
         let listaEventos = ""
         events.forEach(evt => {
         if (evt.type == "CreateEvent") {
-                listaEventos += `<li>${evt.repo.name} - Sem mensagem de commit</li>`
-            } else {
-                listaEventos += `<li>${evt.repo.name} - ${evt.payload.commits.message}</li>`
-            }
+           listaEventos += `<li>${evt.repo.name} - sem mensagem de commit</li>`
+        } else if(evt.payload.commits.lenght == 0){
+                    listaEventos += `<li>${evt.repo.name} - mensagem do push não encontrada</li>`
+                }
+                else {
+                    listaEventos += `<li>${evt.repo.name} - ${evt.payload.commits[0].message}</li>`  
+                }
         })
         document.querySelector(".profile-data").innerHTML += `<div>
                                                                 <h2>Eventos</h2>
